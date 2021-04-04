@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Esqueceu sua senha? Sem problemas. Apenas deixe-nos saber seu email e iremos te enviar um link para que possa redefinir sua senha.') }}
         </div>
 
         @if (session('status'))
@@ -25,8 +25,12 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Voltar') }}
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Enviar email') }}
                 </x-jet-button>
             </div>
         </form>

@@ -10,8 +10,14 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+        <!--Font Awesome -->
+        <script src="https://kit.fontawesome.com/de15e2fa09.js" crossorigin="anonymous"></script>
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/style.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/adminlte.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/OverlayScrollbars.css') }}">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>

@@ -1,0 +1,56 @@
+#logo{
+    max-width: 300px;
+    margin-top: 25px;
+}
+
+.map{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+#frame-rel{
+    display: block;
+    width: 100%;
+    margin: 10px;
+    height: 4000px;
+    border: none;
+	overflow: hidden;
+}
+
+#frame-rep{
+    display: block;
+    width: 100%;
+    margin: 10px;
+    height: 4000px;
+    border: none;
+	overflow: hidden;
+}
+
+.hide{
+    display:none;
+}
+
+.pag {
+    display: inline-block;
+}
+
+.pag a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pag a.active {
+    background-color: rgb(80, 80, 255);
+    color: white;
+    border-radius: 5px;
+}
+
+.pag a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
