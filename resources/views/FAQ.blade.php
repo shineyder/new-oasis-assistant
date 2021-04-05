@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ __('F.A.Q.') }}
     </x-slot>
-
+    
     <h5>Questões Frequentemente Perguntadas:</h5>
 
     <ul>
