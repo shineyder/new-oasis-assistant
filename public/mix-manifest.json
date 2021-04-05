@@ -1,7 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/adminlte.js": "/js/adminlte.min.js",
+    "/js/overlayScrollbars.js": "/js/jquery.overlayScrollbars.min.js",
     "/css/app.css": "/css/app.css",
     "/css/style.css": "/css/style.css",
     "/css/adminlte.css": "/css/adminlte.min.css",
-    "/css/OverlayScrollbars.css": "/css/OverlayScrollbars.min.css"
+    "/css/overlayScrollbars.css": "/css/OverlayScrollbars.min.css"
 }

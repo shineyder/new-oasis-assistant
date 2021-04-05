@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ mix('css/style.css') }}">
         <link rel="stylesheet" href="{{ mix('css/adminlte.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/OverlayScrollbars.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/overlayScrollbars.css') }}">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
