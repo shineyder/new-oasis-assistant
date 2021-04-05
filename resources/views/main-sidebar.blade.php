@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('dashboard') }}" class="brand-link elevation-4">
+    <a href="{{ route('profile') }}" class="brand-link elevation-4">
     <img src="{{asset('images/logo_oasis_assistant_min-2.png')}}"
         alt="Oasis Assistant Logo"
         class="brand-image img-circle elevation-3"
@@ -15,7 +15,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                @if (Session::get('access') <= 8)
+                @if (Auth::user()->access >= 8)
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-cog"></i>
@@ -54,10 +54,10 @@
                     </li>
                 @endif
 
-                @if (Session::get('access') >= 2)
+                @if (Auth::user()->access >= 2)
                     <li class="nav-header">{{ __('Território') }}</li>
 
-                    @if (Session::get('access') < 8)
+                    @if (Auth::user()->access < 8)
                         <li class="nav-item">
                             <a href="/Report" class="nav-link">
                                 <i class="nav-icon fas fa-street-view"></i>
@@ -81,7 +81,7 @@
                 <li class="nav-header">{{ __('Outros') }}</li>
 
                 <li class="nav-item">
-                    <a href="/ContactUs" class="nav-link">
+                    <a href="{{ route('contactus') }}" class="nav-link">
                         <i class="nav-icon fas fa-comment"></i>
                         <p>
                             {{ __('Fale Conosco') }}
@@ -90,7 +90,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="/FAQ" class="nav-link">
+                    <a href="{{ route('FAQ') }}" class="nav-link">
                         <i class="nav-icon fas fa-question"></i>
                         <p>
                             {{ __('F.A.Q.') }}

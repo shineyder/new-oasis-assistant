@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,12 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'handleLogin']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/user/profile', function () {
+    return view('profile.show');
+})->name('profile');
 
 Auth::routes();
 
 Route::get('/FAQ', function () {
     return view('FAQ');
 })->name('FAQ')->middleware('auth');
+
+Route::get('/contact-us', [ContactUsController::class, 'index'])->middleware('auth');
+Route::post('/contact-us', [ContactUsController::class, 'sendContact'])->name('contactus.send');

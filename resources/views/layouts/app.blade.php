@@ -45,19 +45,19 @@
                 <div class="content-wrapper">
                     <!-- Page Heading -->
                     @if (isset($header))
-                        <header class="bg-white shadow" style="height: 64px">
-                            <div class="mx-auto sm:px-6 lg:px-8">
+                        <header class="bg-white shadow">
+                            <div class="max-w-4xl mx-auto py-1 px-1 sm:px-6 lg:px-8">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <h1 style="padding-top: 8px;">{{ $header }}</h1>
+                                        <div class="col-sm-6" style="padding-top: 8px;">
+                                            <h1 >{{ $header }}</h1>
                                         </div>
                                         <div class="col-sm-6">
-                                            <ol class="breadcrumb float-sm-right" style="height: 64px">
-                                                <li class="breadcrumb-item" style="padding-top: 8px;">
-                                                    <a href="{{ route('dashboard') }}">{{ __('Home') }}</a>
+                                            <ol class="breadcrumb float-sm-right" style="margin-top: 8px;">
+                                                <li class="breadcrumb-item">
+                                                    <a href="{{ route('profile') }}">{{ __('Home') }}</a>
                                                 </li>
-                                                <li class="breadcrumb-item active" style="padding-top: 8px;">
+                                                <li class="breadcrumb-item active">
                                                     {{ $header }}
                                                 </li>
                                             </ol>
@@ -70,7 +70,7 @@
 
                     <!-- Page Content -->
                     <main>
-                        <section class="content" style="padding-top: 40px;">
+                        <section class="content">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-12">

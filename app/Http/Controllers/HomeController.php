@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function handleLogin()
     {
         if (Auth::check()) :
-            return redirect(Route('dashboard'));
+            return redirect(Route('profile'));
         else :
             return view('auth.login');
         endif;
