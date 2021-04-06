@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TerritoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,10 @@ Route::get('/FAQ', function () {
 
 Route::get('/contact-us', [ContactUsController::class, 'index'])->middleware('auth')->name('contactus.index');
 Route::post('/contact-us', [ContactUsController::class, 'sendContact'])->name('contactus.send');
+
+Route::get('/territory', [TerritoryController::class, 'index'])->middleware('auth')->name('territory.index');
+Route::get('/territory/{regio}', [TerritoryController::class, 'showRegio'])->middleware('auth')->name('territory.regio');
+Route::get('/territory/{regio}/{local}', [TerritoryController::class, 'showLocal'])->middleware('auth')->name('territory.local');
+
+Route::get('/frame/{local}', [TerritoryController::class, 'showFrame'])->middleware('auth')->name('territory.show');
+Route::post('/frame', [TerritoryController::class, 'report'])->name('territory.report');

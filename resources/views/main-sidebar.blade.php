@@ -27,7 +27,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/MasterPublishers" class="nav-link">
+                                <a href="/master-publishers" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{ __('Publicadores') }}
@@ -35,7 +35,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/MasterRequest" class="nav-link">
+                                <a href="/master-request" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{ __('Solicitações') }}
@@ -43,7 +43,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/Report" class="nav-link">
+                                <a href="/report" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{ __('Relatórios') }}
@@ -59,7 +59,7 @@
 
                     @if (Auth::user()->access < 8)
                         <li class="nav-item">
-                            <a href="/Report" class="nav-link">
+                            <a href="/report" class="nav-link">
                                 <i class="nav-icon fas fa-street-view"></i>
                                 <p>
                                     {{ __('Meus Relatórios') }}
@@ -69,7 +69,7 @@
                     @endif
 
                     <li class="nav-item">
-                        <a href="/Territory" class="nav-link">
+                        <a href="{{ route('territory.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-map"></i>
                             <p>
                                 {{ __('Visualizar Territórios') }}

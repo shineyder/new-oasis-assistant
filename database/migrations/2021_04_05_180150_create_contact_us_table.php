@@ -21,7 +21,7 @@ class CreateContactUsTable extends Migration
             $table->string('status_now')->default('em Analise');
             $table->bigInteger('ticket');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

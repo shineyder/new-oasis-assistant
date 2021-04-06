@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/adminlte.js": "/js/adminlte.min.js",
     "/js/overlayScrollbars.js": "/js/jquery.overlayScrollbars.min.js",
+    "/js/imageMapResizer.js": "/js/imageMapResizer.min.js",
     "/css/app.css": "/css/app.css",
     "/css/style.css": "/css/style.css",
     "/css/adminlte.css": "/css/adminlte.min.css",
