@@ -27,11 +27,17 @@
                         <input class="custom-control-input" type="radio" name="subject" id="subject3" value={{ __('Outro') }}>
                         <label for="subject3" class="custom-control-label">{{ __('Outro') }}</label>
                     </div>
+                    @error('subject')
+                        <p class="text-danger">{{str_replace('subject', 'Assunto', $message)}}</p>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <x-jet-label for="msg" value="{{ __('Mensagem') }}" />
                     <textarea id="msg" name="msg" class="form-control" rows="4" placeholder="Mensagem ..."></textarea>
+                    @error('msg')
+                        <p class="text-danger">{{str_replace('msg', 'Mensagem', $message)}}</p>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -57,4 +63,12 @@
         <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
+    @if (Session::has('message_success'))
+        <script>
+            window.onload = function() {
+                toastr.success("{!! Session::get('message_success') !!}");
+            };
+        </script>
+    @endif
 </x-app-layout>

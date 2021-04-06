@@ -16,12 +16,11 @@ class CreateContactUsTable extends Migration
         Schema::create('contact_us', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('assunto');
+            $table->string('subject');
             $table->text('message');
-            $table->timestamp('contact_initialize_at');
-            $table->timestamp('contact_concluded_at')->nullable();
             $table->string('status_now')->default('em Analise');
-            $table->integer('ticket');
+            $table->bigInteger('ticket');
+            $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

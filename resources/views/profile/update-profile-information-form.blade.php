@@ -21,6 +21,12 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+        <!-- Group DISABLED -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="group" value="{{ __('Grupo') }}" />
+            <x-jet-input id="group" type="text" class="mt-1 block w-full" placeholder="{{Auth::user()->group}}" disabled />
+        </div>
     </x-slot>
 
     <x-slot name="actions">

@@ -11,8 +11,12 @@ class ContactUs extends Model
 
     protected $table = "contact_us";
 
-    public function post()
-    {
-        return $this->belongsTo(User::class);
-    }
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'contact_concluded_at' => 'datetime',
+    ];
 }

@@ -28,7 +28,7 @@
 @endcomponent
 @endisset
 
-{{-- Outro Lines --}}
+{{-- Other Lines --}}
 @foreach ($outroLines as $line)
 {{ $line }}
 
@@ -38,7 +38,7 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Atenciosamente,'),<br>
+@lang('Atenciosamente'),<br>
 {{ config('app.name') }}
 @endif
 

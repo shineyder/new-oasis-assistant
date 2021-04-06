@@ -28,5 +28,5 @@ Route::get('/FAQ', function () {
     return view('FAQ');
 })->name('FAQ')->middleware('auth');
 
-Route::get('/contact-us', [ContactUsController::class, 'index'])->middleware('auth');
+Route::get('/contact-us', [ContactUsController::class, 'index'])->middleware('auth')->name('contactus.index');
 Route::post('/contact-us', [ContactUsController::class, 'sendContact'])->name('contactus.send');

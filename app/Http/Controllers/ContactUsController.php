@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactUs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactUsController extends Controller
 {
@@ -14,47 +16,34 @@ class ContactUsController extends Controller
     public function sendContact(Request $request)
     {
         $validated = $request->validate([
-            'id' => 'required|integer',
-            'nome' => 'required|string',
-            'email' => 'required|email',
             'msg' => 'required|min: 20',
-            'subject' => 'required|string',
+            'subject' => 'required'
         ]);
 
-        $ticket = date_timestamp_get(date_create()) . $validated['id'];
+        $image = new ImageUploadController();
+        $fileName = $image->imageUpload($request["fileToUploadTalk"]);
 
-        // $id = $this->sanitize(5, "id", "ContactUs");
-        // $nome = $this->sanitize(6, "nome", "ContactUs");
-        // $email = $this->sanitize(3, "email", "ContactUs");
-        // $mensagem = $this->sanitize(10, "mensag", "ContactUs");
-        // $assunto = $this->sanitize(6, "assunto", "ContactUs");
-        // $ticket = date_timestamp_get(date_create()) . $id;
-        // $targetFile = $this->verifyImg($_FILES["fileToUploadTalk"]);
+        $ticket = date_timestamp_get(date_create()) . $request->id;
 
         //Envia email com os dados da solicitação para o ADM
-        $emailSend = new Mail();
-        $emailSend->sendMail('adrianoshineyder@hotmail.com', 'Adriano', 'Shineyder', $mensagem, $assunto, $targetFile);
+        $emailSend = new MailController();
+        $emailSend->sendMail("adrianoshineyder@hotmail.com", "Solicitacao", ['msg' => $validated['msg']], $fileName);
 
         //Envia email para o usuario da solicitação com o Ticket da solicitação
-        $message = $emailSend->message(6, [$nome, $sobrenome, $ticket]);
-        $emailSend->sendMail($email, $nome, $sobrenome, $message, "Confirmacao de envio - Fale Conosco", "");
-
-        $talk = ["id" => null,
-                "idUser" => $id,
-                "assunto" => $assunto,
-                "message" => $mensagem,
-                "timeInitialize" => date('d/m/Y H:i:s'),
-                "timeConclusion" => null,
-                "statusNow" => "em Espera",
-                "ticket" => $ticket];
-        $this->db->create("contactus", $talk);
+        $emailSend->sendMail(Auth::user()->email, "Fale Conosco", $ticket);
 
         //Apaga a img
-        if ($targetFile != '') :
-            unlink($targetFile);
+        if ($fileName != '') :
+            unlink(storage_path('app\public\files') . "\\" . $fileName);
         endif;
 
-        $this->msg("Solicitação enviada!", "success");
-        exit();
+        $talk = new ContactUs();
+        $talk->user_id = $request->id;
+        $talk->subject = $validated['subject'];
+        $talk->message = $validated['msg'];
+        $talk->ticket = $ticket;
+        $talk->save();
+
+        return back()->with('message_success', 'Sua solicitação foi enviada com sucesso');
     }
 }

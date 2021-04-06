@@ -81,7 +81,7 @@
                 <li class="nav-header">{{ __('Outros') }}</li>
 
                 <li class="nav-item">
-                    <a href="{{ route('contactus') }}" class="nav-link">
+                    <a href="{{ route('contactus.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-comment"></i>
                         <p>
                             {{ __('Fale Conosco') }}
