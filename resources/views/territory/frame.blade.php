@@ -3,15 +3,12 @@
     <head>
         <meta charset="utf-8">
 
-        <!-- Compiled and minified CSS and Import Google Icon Font -->
+        <!-- Materialize CSS and Import Google Icon Font -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css" integrity="sha512-koDUjGvRZrcni2jJFT9I3VRYY0PWNKtr1Wj9U36eLhcFgBm36KV11yTi4p2H3HwUMirxZ+dMpKeUuRjYOFjeDQ==" crossorigin="anonymous" />
 
         <!-- Toastr CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
-
-        <!-- Toastr JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" defer></script>
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,21 +18,11 @@
         </style>
     </head>
 
-    <script>
-    function myFunction(param){
-        if (document.getElementById("work_" + param).checked) {
-            document.getElementById("data-" + param).setAttribute("class", "");
-        } else {
-            document.getElementById("data-" + param).setAttribute("class", "hide");
-        }
-    }
-    </script>
-
     <body>
         <div class="container">
             <form action="{{route('territory.report')}}" method="POST">
                 @csrf
-                
+
                 <ul class="collapsible">
                     @foreach ($data as $blockData)
                         <li>
@@ -94,14 +81,37 @@
             </form>
         </div>
 
-        <!-- Compiled and minified JavaScript -->
-        <script type = "text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- Materialize JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js" integrity="sha512-zCHGovd9kHtyOdCLYmXApVFPtXQjZNyjHGU6DKPKR1HnhiSnVc71r1x7bpahdGw7mOKbz6oZ1k7/gbfRNp50ag==" crossorigin="anonymous"></script>
+
+        <!-- Toastr JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
 
         <script>
         $(document).ready(function() {
             $('.collapsible').collapsible({accordion: false});
         })
         </script>
+
+        <script>
+        function myFunction(param){
+            if (document.getElementById("work_" + param).checked) {
+                document.getElementById("data-" + param).setAttribute("class", "");
+            } else {
+                document.getElementById("data-" + param).setAttribute("class", "hide");
+            }
+        }
+        </script>
+
+        @if (Session::has('message_success'))
+            <script>
+            window.onload = function() {
+                toastr.success("{!! Session::get('message_success') !!}");
+            };
+            </script>
+        @endif
     </body>
 </html>

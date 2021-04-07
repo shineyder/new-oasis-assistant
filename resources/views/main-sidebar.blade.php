@@ -27,7 +27,7 @@
 
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/master-publishers" class="nav-link">
+                                <a href="{{ route('publisher.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{ __('Publicadores') }}

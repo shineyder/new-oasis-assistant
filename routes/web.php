@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\TerritoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -38,3 +39,5 @@ Route::get('/territory/{regio}/{local}', [TerritoryController::class, 'showLocal
 
 Route::get('/frame/{local}', [TerritoryController::class, 'showFrame'])->middleware('auth')->name('territory.show');
 Route::post('/frame', [TerritoryController::class, 'report'])->name('territory.report');
+
+Route::get('/master-publisher', [PublisherController::class, 'index'])->name('publisher.index');
