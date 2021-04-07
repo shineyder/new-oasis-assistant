@@ -57,10 +57,10 @@ class PublisherDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            'Nome',
-            'E-mail',
-            'Grupo',
-            'Acesso'
+            ['data' => 'name', 'name' => 'name', 'title' => 'Nome'],
+            ['data' => 'email', 'name' => 'email', 'title' => 'Email'],
+            ['data' => 'group', 'name' => 'group', 'title' => 'Grupo'],
+            ['data' => 'access', 'name' => 'access', 'title' => 'Acesso'],
             //'Definir Grupo',
             //'Definir Acesso'
         ];
