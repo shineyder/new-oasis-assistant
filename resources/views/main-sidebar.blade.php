@@ -43,7 +43,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/report" class="nav-link">
+                                <a href="{{ route('reportmaster.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{ __('Relatórios') }}
@@ -57,16 +57,14 @@
                 @if (Auth::user()->access >= 1)
                     <li class="nav-header">{{ __('Território') }}</li>
 
-                    @if (Auth::user()->access < 8)
-                        <li class="nav-item">
-                            <a href="/report" class="nav-link">
-                                <i class="nav-icon fas fa-street-view"></i>
-                                <p>
-                                    {{ __('Meus Relatórios') }}
-                                </p>
-                            </a>
-                        </li>
-                    @endif
+                    <li class="nav-item">
+                        <a href="{{ route('report.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-street-view"></i>
+                            <p>
+                                {{ __('Meus Relatórios') }}
+                            </p>
+                        </a>
+                    </li>
 
                     <li class="nav-item">
                         <a href="{{ route('territory.index') }}" class="nav-link">

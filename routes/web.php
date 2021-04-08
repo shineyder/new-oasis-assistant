@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TerritoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -49,4 +50,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/master-contact-us', [ContactUsController::class, 'masterIndex'])->name('contactusmaster.index');
     Route::get('/master-contact-us-data', [ContactUsController::class, 'masterData'])->name('contactusmaster.data');
     Route::post('/master-contact-us-status', [ContactUsController::class, 'masterUpdateStatus'])->name('contactusmaster.status');
+
+    Route::get('/report', [ReportController::class, 'index'])->name('report.index');
+    Route::get('/report-data', [ReportController::class, 'data'])->name('report.data');
+
+    Route::get('/master-report', [ReportController::class, 'masterIndex'])->name('reportmaster.index');
+    Route::get('/master-report-data', [ReportController::class, 'masterData'])->name('reportmaster.data');
 });
