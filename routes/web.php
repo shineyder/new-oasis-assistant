@@ -43,8 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/master-publisher', [PublisherController::class, 'index'])->name('publisher.index');
     Route::get('/master-publisher-data', [PublisherController::class, 'data'])->name('publisher.data');
-    Route::post('/master-publish-group', [PublisherController::class, 'updateGroup'])->name('publisher.group');
-    Route::post('/master-publish-access', [PublisherController::class, 'updateAccess'])->name('publisher.access');
+    Route::post('/master-publisher-group', [PublisherController::class, 'updateGroup'])->name('publisher.group');
+    Route::post('/master-publisher-access', [PublisherController::class, 'updateAccess'])->name('publisher.access');
 
     Route::get('/master-contact-us', [ContactUsController::class, 'masterIndex'])->name('contactusmaster.index');
     Route::get('/master-contact-us-data', [ContactUsController::class, 'masterData'])->name('contactusmaster.data');

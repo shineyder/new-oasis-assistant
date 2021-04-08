@@ -12,11 +12,19 @@ class PublisherController extends Controller
 {
     public function index()
     {
+        if (Auth::user()->access < 8) :
+            return back()->with('message_danger', 'Acesso negado!');
+        endif;
+
         return view('publish-master');
     }
 
     public function data(Request $request)
     {
+        if (Auth::user()->access < 8) :
+            return back()->with('message_danger', 'Acesso negado!');
+        endif;
+
         $request->ajax();
         $data = Publisher::select('id', 'name', 'email', 'group', 'access');
 

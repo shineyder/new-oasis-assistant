@@ -7,7 +7,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DataTables;
-use Illuminate\Support\Facades\DB;
 
 class ContactUsController extends Controller
 {
@@ -52,11 +51,19 @@ class ContactUsController extends Controller
 
     public function masterIndex()
     {
+        if (Auth::user()->access < 8) :
+            return back()->with('message_danger', 'Acesso negado!');
+        endif;
+
         return view('contact-us-master');
     }
 
     public function masterData(Request $request)
     {
+        if (Auth::user()->access < 8) :
+            return back()->with('message_danger', 'Acesso negado!');
+        endif;
+
         $request->ajax();
         $data = ContactUs::join('users', 'contact_us.user_id', '=', 'users.id')
             ->select(

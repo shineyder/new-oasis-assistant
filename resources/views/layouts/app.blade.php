@@ -147,5 +147,13 @@
                 };
             </script>
         @endif
+
+        @if (Session::has('message_danger'))
+            <script>
+                window.onload = function() {
+                    toastr.error("{!! Session::get('message_danger') !!}");
+                };
+            </script>
+        @endif
     </body>
 </html>
