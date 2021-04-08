@@ -18,7 +18,8 @@ class PublisherController extends Controller
     public function data(Request $request)
     {
         $request->ajax();
-        $data = Publisher::select('*')->orderBy('id', 'ASC');
+        $data = Publisher::select('id', 'name', 'email', 'group', 'access');
+
         return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('defGroup', function ($data) {

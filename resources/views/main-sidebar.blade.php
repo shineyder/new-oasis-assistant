@@ -35,7 +35,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/master-request" class="nav-link">
+                                <a href="{{ route('contactusmaster.index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{ __('Solicitações') }}

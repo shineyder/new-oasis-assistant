@@ -150,6 +150,7 @@
             var table = $('.data-table').DataTable({
                 processing: true,
                 serverSide: true,
+                responsive: true,
                 ajax: "{{ route('publisher.data') }}",
                 columns: [
                     {data: 'name', name: 'name'},
