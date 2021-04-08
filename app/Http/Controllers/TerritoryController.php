@@ -85,7 +85,7 @@ class TerritoryController extends Controller
         // Verifica se o território foi completo
         $this->verifyIfTerritoryIsFinished();
 
-        return back()->with('message_success', 'Relatório enviado com sucesso!');
+        return back();
     }
 
     public function verifyIfTerritoryIsFinished()

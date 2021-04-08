@@ -54,7 +54,7 @@
                     </li>
                 @endif
 
-                @if (Auth::user()->access >= 2)
+                @if (Auth::user()->access >= 1)
                     <li class="nav-header">{{ __('Território') }}</li>
 
                     @if (Auth::user()->access < 8)

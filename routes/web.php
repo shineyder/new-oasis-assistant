@@ -43,4 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/master-publisher', [PublisherController::class, 'index'])->name('publisher.index');
     Route::get('/master-publisher-data', [PublisherController::class, 'data'])->name('publisher.data');
+    Route::post('master-publish-group', [PublisherController::class, 'updateGroup'])->name('publisher.group');
+    Route::post('master-publish-access', [PublisherController::class, 'updateAccess'])->name('publisher.access');
 });
