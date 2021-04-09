@@ -86,10 +86,6 @@
 
                         <div class="form-group">
                             <div class="custom-control custom-radio">
-                                <input class="custom-control-input" type="radio" name="access" id="acc0" value="-1">
-                                <label for="acc0" class="custom-control-label">Bloqueado</label>
-                            </div>
-                            <div class="custom-control custom-radio">
                                 <input class="custom-control-input" type="radio" name="access" id="acc1" value="0">
                                 <label for="acc1" class="custom-control-label">Nível 0</label>
                             </div>

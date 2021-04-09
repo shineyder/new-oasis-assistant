@@ -56,4 +56,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/master-report', [ReportController::class, 'masterIndex'])->name('reportmaster.index');
     Route::get('/master-report-data', [ReportController::class, 'masterData'])->name('reportmaster.data');
+    Route::get('/master-report-s13', [ReportController::class, 'doS13'])->name('territory.s13');
+
+    Route::post('/report-update', [ReportController::class, 'updateReport'])->name('report.update');
+    Route::post('/report-delete', [ReportController::class, 'deleteReport'])->name('report.delete');
 });

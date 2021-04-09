@@ -9,7 +9,7 @@
         <p><li><b>Por que o site acessou direto sem pedir para fazer login?</b></li>
         <li>No último acesso você provavelmente não apertou em sair, então a sessão foi mantida aberta.</li></p>
 
-        <p><li><b>No perfil meu grupo está como "à definir" ou está incorreto, como eu mudo isso?</b></li>
+        <p><li><b>No perfil meu grupo está vazio ou está incorreto, como eu mudo isso?</b></li>
         <li>Só os superintendentes de grupo e seus ajudantes podem alterar esse campo, peça para um deles atualizar suas informações.</li></p>
 
         <p><li><b>Fiz um relatório, mas cometi um erro, o que eu faço?</b></li>

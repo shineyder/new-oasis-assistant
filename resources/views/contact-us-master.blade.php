@@ -71,12 +71,12 @@
                 responsive: true,
                 ajax: "{{ route('contactusmaster.data') }}",
                 columns: [
-                    {data: 'name', name: 'name'},
-                    {data: 'email', name: 'email'},
-                    {data: 'subject', name: 'subject'},
-                    {data: 'ticket', name: 'ticket'},
-                    {data: 'created_at', name: 'created_at'},
-                    {data: 'status_now', name: 'status_now'},
+                    {data: 'name', name: 'users.name'},
+                    {data: 'email', name: 'users.email'},
+                    {data: 'subject', name: 'contact_us.subject'},
+                    {data: 'ticket', name: 'contact_us.ticket'},
+                    {data: 'created_at', name: 'contact_us.created_at'},
+                    {data: 'status_now', name: 'contact_us.status_now'},
                     {data: 'defStatus', name: 'defStatus', orderable: false, searchable: false},
                     {data: 'message', name: 'message'}
                 ],
