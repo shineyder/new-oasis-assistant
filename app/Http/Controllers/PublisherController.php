@@ -77,6 +77,11 @@ class PublisherController extends Controller
     public function updateAccess(Request $request)
     {
         $publisher = Publisher::find($request->accessId);
+
+        if ($publisher->access >= Auth::user()->access) :
+            return back()->with('message_danger', 'Nível de acesso insuficiente para essa ação');
+        endif;
+
         $publisher->access = $request->access;
         $publisher->save();
 
